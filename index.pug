@@ -3,11 +3,8 @@
   button(v-on:click="add('pen')").adbtn 新增筆
   button(v-on:click="add('pineapple')").adbtn 新增鳳梨
   button(v-on:click="add('apple')").adbtn 新增蘋果
-  h5 狀態: {{status}}
-  h5 列表共有 {{fruits.length}} 項資料
-
-
-
+  h5 狀態：{{status}}
+  h5(v-if="fruits.length>0") 列表：共有{{fruits.length}}項資料，有{{all.pen}}隻筆，{{all.pineapple}}顆鳳梨，{{all.apple}}顆蘋果
   
   .fruit(v-for="(id,fruit) in fruits" track-by='$index')
     .name {{id+1}} {{fruit}}

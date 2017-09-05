@@ -18,14 +18,15 @@
   <button class="adbtn" v-on:click="add('pen')">新增筆</button>
   <button class="adbtn" v-on:click="add('pineapple')">新增鳳梨</button>
   <button class="adbtn" v-on:click="add('apple')">新增蘋果</button>
-  <h5>狀態: {{status}}</h5>
-  <h5>列表共有 {{fruits.length}} 項資料</h5>
+  <h5>狀態：{{status}}</h5>
+  <h5 v-if="fruits.length&gt;0">列表：共有{{fruits.length}}項資料，有{{all.pen}}隻筆，{{all.pineapple}}顆鳳梨，{{all.apple}}顆蘋果</h5>
   <div class="fruit" v-for="(id,fruit) in fruits" track-by="$index">
     <div class="name">{{id+1}} {{fruit}}</div><img v-if="fruit=='pen'" src="https://image.flaticon.com/icons/png/512/233/233838.png"/><img v-if="fruit=='apple'" src="https://image.flaticon.com/icons/svg/533/533902.svg" alt=""/><img v-if="fruit=='pineapple'" src="https://image.flaticon.com/icons/svg/184/184527.svg"/>
     <button v-on:click="remove(id,fruit)">X</button>
   </div>
 </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 
     <script src="js/index.js"></script>
 
